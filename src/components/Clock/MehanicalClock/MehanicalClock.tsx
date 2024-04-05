@@ -1,6 +1,6 @@
 import React from "react";
 import "./MehanicalClock.scss";
-import { IRefs } from "src/widget/Clock/Clock";
+import { IRefs } from "src/widget/Clock/hooks/useMehanicalClock";
 
 const MehanicalClock = React.forwardRef<IRefs>((_, refs) => {
   const hr = React.useRef<HTMLDivElement | null>(null);
