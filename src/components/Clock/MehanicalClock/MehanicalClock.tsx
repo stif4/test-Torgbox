@@ -1,15 +1,15 @@
 import React from "react";
-import "./clock.scss";
+import "./MehanicalClock.scss";
 
 const DEGREE_OF_ROTATION = 6;
 
-export default function Clock() {
+export default function MehanicalClock() {
   const hr = React.useRef(null);
   const sc = React.useRef(null);
   const mn = React.useRef(null);
 
   React.useEffect(() => {
-    const IntervalId = setInterval(() => {
+    const IntervalId = setInterval(() => { 
       let day = new Date();
 
       let ss = day.getSeconds() * DEGREE_OF_ROTATION;
@@ -27,15 +27,15 @@ export default function Clock() {
   }, []);
 
   return (
-    <div className="clock">
-      <div className="clock__hour">
-        <div className="clock__hr" id="hr" ref={hr} />
+    <div className="Mclock">
+      <div className="Mclock__hour">
+        <div className="Mclock__hr" ref={hr} />
       </div>
-      <div className="clock__min">
-        <div className="clock__mn" id="mn" ref={mn} />
+      <div className="Mclock__min">
+        <div className="Mclock__mn" ref={mn} />
       </div>
-      <div className="clock__sec">
-        <div className="clock__sc" id="sc" ref={sc} />
+      <div className="Mclock__sec">
+        <div className="Mclock__sc" ref={sc} />
       </div>
     </div>
   );

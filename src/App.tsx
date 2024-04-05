@@ -1,17 +1,17 @@
 import React from "react";
 import "./index.scss";
-import Clock from "./components/Clock/Clock";
+import MehanicalClock from "./components/Clock/MehanicalClock/MehanicalClock";
 
 const App = () => {
   return (
     <div className="app">
       <div className="cards">
         <div className="cards__card">
-          <Clock />
+          <MehanicalClock />
         </div>
 
         <div className="cards__card">
-          <Clock />
+          <MehanicalClock />
         </div>
       </div>
     </div>
