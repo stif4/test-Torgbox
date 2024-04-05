@@ -1,30 +1,17 @@
 import React from "react";
 import "./MehanicalClock.scss";
+import { IRefs } from "src/widget/Clock/Clock";
 
-const DEGREE_OF_ROTATION = 6;
+const MehanicalClock = React.forwardRef<IRefs>((_, refs) => {
+  const hr = React.useRef<HTMLDivElement | null>(null);
+  const mn = React.useRef<HTMLDivElement | null>(null);
+  const sc = React.useRef<HTMLDivElement | null>(null);
 
-export default function MehanicalClock() {
-  const hr = React.useRef(null);
-  const sc = React.useRef(null);
-  const mn = React.useRef(null);
-
-  React.useEffect(() => {
-    const IntervalId = setInterval(() => { 
-      let day = new Date();
-
-      let ss = day.getSeconds() * DEGREE_OF_ROTATION;
-      let mm = day.getMinutes() * DEGREE_OF_ROTATION;
-      let hh = day.getHours() * 30 + mm / 12;
-
-      if (hr && mn && sc) {
-        hr.current.style.transform = `rotateZ(${hh}deg)`;
-        mn.current.style.transform = `rotateZ(${mm}deg)`;
-        sc.current.style.transform = `rotateZ(${ss}deg)`;
-      }
-    });
-
-    return () => clearInterval(IntervalId);
-  }, []);
+  React.useImperativeHandle(refs, () => ({
+    hr: hr.current,
+    mn: mn.current,
+    sc: sc.current,
+  }));
 
   return (
     <div className="Mclock">
@@ -39,4 +26,6 @@ export default function MehanicalClock() {
       </div>
     </div>
   );
-}
+});
+
+export default MehanicalClock;

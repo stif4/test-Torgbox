@@ -1,21 +1,20 @@
 import React from "react";
-import MehanicalClock from "./components/Clock/MehanicalClock/MehanicalClock";
+import Clock from "./widget/Clock/Clock";
 import "./index.scss";
-import ElectronicClock from "./components/Clock/ElectronicClock/ElectronicClock";
 
 const App = () => {
   return (
     <div className="app">
       <div className="cards">
+
         <div className="cards__card">
-          <MehanicalClock />
-          <ElectronicClock />
+          <Clock />
         </div>
 
         <div className="cards__card">
-          <MehanicalClock />
-          <ElectronicClock />
+          <Clock />
         </div>
+
       </div>
     </div>
   );
