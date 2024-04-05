@@ -1,9 +1,43 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import "nullstyle.scss";
+
+body {
+  min-height: 100vh;
+  background: #091921;
 }
 
 .app {
-    font-size: 30px;
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+}
+
+.cards {
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  &__card {
+    flex: 1 1 calc(25% - 20px);
+    padding: 20px;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+    &__card {
+      flex: 1 1 calc(33.33% - 20px);
+    }
+  }
+
+  @media (max-width: 480px) {
+    &__card {
+      flex: 1 1 calc(50% - 20px);
+    }
+  }
 }
