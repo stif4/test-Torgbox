@@ -5,7 +5,7 @@ import "./CommonSelect.scss";
 interface ICoomonSelectProps
   extends Omit<Props, "className" | "classNamePrefix"> {}
 
-function CoomonSelect({ ...other }: ICoomonSelectProps) {
+function CommonSelect({ ...other }: ICoomonSelectProps) {
   return (
     <div className="CommonSelect">
       <Select
@@ -17,4 +17,4 @@ function CoomonSelect({ ...other }: ICoomonSelectProps) {
   );
 }
 
-export default memo(CoomonSelect);
+export default memo(CommonSelect);
