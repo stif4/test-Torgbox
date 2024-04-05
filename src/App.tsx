@@ -1,6 +1,7 @@
 import React from "react";
-import "./index.scss";
 import MehanicalClock from "./components/Clock/MehanicalClock/MehanicalClock";
+import "./index.scss";
+import ElectronicClock from "./components/Clock/ElectronicClock/ElectronicClock";
 
 const App = () => {
   return (
@@ -8,10 +9,12 @@ const App = () => {
       <div className="cards">
         <div className="cards__card">
           <MehanicalClock />
+          <ElectronicClock />
         </div>
 
         <div className="cards__card">
           <MehanicalClock />
+          <ElectronicClock />
         </div>
       </div>
     </div>
