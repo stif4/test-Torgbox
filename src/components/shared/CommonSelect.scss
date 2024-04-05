@@ -1,0 +1,17 @@
+.CommonSelect {
+  width: 100%;
+  height: 100%;
+}
+
+.prefix-react-select__control,
+.prefix-react-select_error__control {
+  border-radius: 8px !important;
+  border: none !important;
+}
+
+.prefix-react-select__control--is-focused,
+.prefix-react-select_error_control--is-focused {
+  border: none;
+  border-color: inherit !important;
+  box-shadow: inset 0px 0px 0px 2px #ffc600 !important;
+}
