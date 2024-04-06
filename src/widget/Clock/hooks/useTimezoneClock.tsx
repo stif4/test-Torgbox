@@ -1,5 +1,5 @@
 import React from "react";
-import useFetchDataClock, { ITimezoneOptions } from "./useFetchDataClock";
+import useFetchDataClock, { ITimezoneOptions } from "./useTransformDataClock";
 import getCurrentTimezoneFromOptions from "../utils/transformTimezone";
 
 export default function useTimezoneClock() {

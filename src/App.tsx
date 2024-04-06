@@ -6,7 +6,6 @@ const App = () => {
   return (
     <div className="app">
       <div className="cards">
-
         <div className="cards__card">
           <Clock />
         </div>
@@ -14,7 +13,6 @@ const App = () => {
         <div className="cards__card">
           <Clock />
         </div>
-
       </div>
     </div>
   );

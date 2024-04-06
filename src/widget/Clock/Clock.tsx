@@ -14,7 +14,7 @@ export default function Clock() {
     useTimezoneClock();
 
   React.useEffect(() => {
-    const IntervalId = setInterval(() => {
+    const intervalId = setInterval(() => {
       let date = new Date();
 
       if (currentTimezone) {
@@ -28,9 +28,9 @@ export default function Clock() {
 
       setTDOfDataTime(ss, mm, hh);
       setHandsOfClock(ss, mm, hh);
-    });
+    }, 1000);
 
-    return () => clearInterval(IntervalId);
+    return () => clearInterval(intervalId);
   }, [currentTimezone]);
 
   return (

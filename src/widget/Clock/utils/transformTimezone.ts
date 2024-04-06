@@ -1,4 +1,4 @@
-import { ITimezoneOptions } from "../hooks/useFetchDataClock";
+import { ITimezoneOptions } from "../hooks/useTransformDataClock";
 
 function getCurrentTimezone() {
   const offset = new Date().getTimezoneOffset();
