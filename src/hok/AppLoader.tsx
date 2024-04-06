@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useAppDispatch } from "../store";
 import { fetchTimezone } from "../store/slices/timezone/timezoneActions";
 import { getTimezone } from "../store/slices/timezone/timezoneReducer";
+import Spiner from "../components/shared/spiner/Spiner";
 
 interface IAppLoader {
   children: React.ReactNode;
@@ -17,7 +18,7 @@ function AppLoader({ children }: IAppLoader) {
   }, []);
 
   if (timezoneList.content === null || isLoading) {
-    return <>{"loading..."}</>;
+    return <Spiner />;
   }
 
   return <>{children}</>;

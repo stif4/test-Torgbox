@@ -28,7 +28,7 @@ export default function Clock() {
 
       setTDOfDataTime(ss, mm, hh);
       setHandsOfClock(ss, mm, hh);
-    }, 1000);
+    });
 
     return () => clearInterval(intervalId);
   }, [currentTimezone]);
