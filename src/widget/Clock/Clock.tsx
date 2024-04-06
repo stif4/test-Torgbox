@@ -7,7 +7,12 @@ import useElectronicClock from "./hooks/useElectronicClock";
 import useTimezoneClock from "./hooks/useTimezoneClock";
 import "./Clock.scss";
 
-export default function Clock() {
+interface IClockProps {
+  isButton?: boolean;
+  onClick?: () => void;
+}
+
+export default function Clock({ isButton, onClick }: IClockProps) {
   const { dataTime, setTDOfDataTime } = useElectronicClock();
   const { refs, setHandsOfClock } = useMehanicalClock();
   const { currentTimezone, timeZoneOptions, setCureentTimeZone } =
@@ -35,15 +40,26 @@ export default function Clock() {
 
   return (
     <div className="Clock">
-      <div className="Clock__container">
+      <div
+        className="Clock__container"
+        style={isButton ? { opacity: 0.2 } : {}}
+      >
         <MehanicalClock ref={refs} />
         <ElectronicClock {...dataTime} />
         <CommonSelect
           value={currentTimezone}
           onChange={setCureentTimeZone}
           options={timeZoneOptions}
+          isDisabled={isButton}
         />
       </div>
+      {isButton && (
+        <img
+          src="../icons/Group.svg"
+          className="Clock__button"
+          onClick={onClick}
+        />
+      )}
     </div>
   );
 }

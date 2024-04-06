@@ -1,5 +1,20 @@
 .Clock {
+  position: relative;
   &__container > div:not(:last-child) {
     margin-bottom: 10px;
+  }
+
+  &__button {
+    transition: all ease 0.3s;
+    opacity: 0.75;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.9;
+    }
   }
 }
