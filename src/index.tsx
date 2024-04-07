@@ -2,7 +2,7 @@ import { render } from "react-dom";
 import App from "./App";
 import { Provider } from "react-redux";
 import { store } from "./store";
-import AppLoader from "./hok/AppLoader";
+import AppLoader from "./hoc/AppLoader";
 
 render(
   <Provider store={store}>

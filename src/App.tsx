@@ -7,8 +7,10 @@ const INITIAL_VALUE_CLOCK = [<Clock />, <Clock />];
 const App = () => {
   const [countClock, setCountClock] = React.useState(INITIAL_VALUE_CLOCK);
 
+  const isAddClock = countClock.length < 24;
+
   const addClock = () => {
-    if (countClock.length < 24) {
+    if (isAddClock) {
       setCountClock((prev) => [...prev, <Clock />]);
     }
   };
@@ -22,9 +24,11 @@ const App = () => {
           </div>
         ))}
 
-        <div className="cards__card">
-          <Clock isButton onClick={addClock} />
-        </div>
+        {isAddClock && (
+          <div className="cards__card">
+            <Clock isButton onClick={addClock} />
+          </div>
+        )}
       </div>
     </div>
   );
