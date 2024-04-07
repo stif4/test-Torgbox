@@ -1,9 +1,9 @@
 import React from "react";
-import useFetchDataClock, { ITimezoneOptions } from "./useTransformDataClock";
+import useTransformDataClock, { ITimezoneOptions} from "./useTransformDataClock";
 import getCurrentTimezoneFromOptions from "../utils/transformTimezone";
 
 export default function useTimezoneClock() {
-  const { timeZoneOptions } = useFetchDataClock();
+  const { timeZoneOptions } = useTransformDataClock();
 
   const [currentTimezone, setCureentTimeZone] =
     React.useState<ITimezoneOptions>();
