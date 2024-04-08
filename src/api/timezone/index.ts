@@ -1,6 +1,6 @@
 import { ITimezoneListResponse } from "src/store/slices/timezone/timezoneReducer";
 
-const URL = "bd/timeZones.json";
+const URL = "db/timeZones.json";
 
 export const timezoneGet = async (): Promise<ITimezoneListResponse[]> => {
   return new Promise((resolve, reject) => {

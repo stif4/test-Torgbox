@@ -9,6 +9,7 @@ export function buildPlugins({paths}: BuildOptions): webpack.WebpackPluginInstan
     return [
         new HTMLWebpackPlugin({
             template: paths.html,
+            favicon: "./public/icons/clock-icon.ico",
         }),
         new webpack.ProgressPlugin(),
         new MiniCssExtractPlugin({
